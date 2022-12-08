@@ -1,24 +1,19 @@
 <script>
+import TableRow from '../components/jsonRow.svelte';
+import jsonArray from '../lib/store.js'
 
-    let jsonArray
- 
+let titles = []
 
-
+   
  function getJson(){   
     let obj =  document.getElementById("jsonText").value;
     const lines = JSON.parse(obj);
-    console.log(lines)
-
-    jsonArray = Object.entries(lines)
-   
+    jsonArray.set(Object.entries(lines))
     let toTranslate = []
-    let titles = []
-
-    jsonArray.forEach(function(r){
+    $jsonArray.forEach(function(r){
        toTranslate.push([r[1].short_description.value.fr])
        titles.push([r[0]])
     })
-
     if (toTranslate.length == titles.length){
         translate(toTranslate)
     } else {
@@ -27,7 +22,7 @@
 }   
 
 function translate(toTranslate) {
-		let translatedArrayEs = [];
+		/* let translatedArrayEs = [];
         let translatedArrayEn = [];
 		async function translateNow(item) {
 			let urlApi =
@@ -54,31 +49,52 @@ function translate(toTranslate) {
 				console.log(error);
 			}
 		}
-		toTranslate.map(translateNow);
+		toTranslate.map(translateNow); 
 	}
 
 
-    function generateView(translatedArrayEs,translatedArrayEn){
+   */
 
-        for (let i = 0; i < array.length; i++) {
-            jsonArray[i][1].short_description.value.en = translatedArrayEn[i]
-            jsonArray[i][1].short_description.value.es = translatedArrayEs[i]
-        }
-    
-    }
+}
 
-console.log(jsonArray)
+
+
+
 </script>
-
 
 <div class="container">
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+                <textarea class="form-control" rows="40">
+                    {JSON.stringify({$jsonArray},null,2)}
+                </textarea>
 
 
-<h1>Hello Julius</h1>
+                  
+               
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+           
 
-{#if jsonArray == undefined} 
     <div class="row p-4">
+        <div class="col"><h1>Hello Julius</h1></div>
+</div>
+{#if $jsonArray == undefined} 
+ <div class="row p-4">
         <div class="col"> Paste JSON here <br> 
             <textarea class="form-control" rows="25" id="jsonText"></textarea>
         </div>
@@ -87,23 +103,19 @@ console.log(jsonArray)
         <button type="button" class="btn btn-primary" on:click|once={getJson} >Load JSON</button>
 </div>
  {:else}
- {#each jsonArray as post}
-<div class="row p-4">
-			<h2>{post[0]}</h2>       
-         <div class="col"> FR: <br><textarea class="form-control" rows="8">{post[1].short_description.value.fr}>  </textarea> </div>
-            <div class="col"> EN: <br> <textarea class="form-control" rows="8" id="{post[0]}+_en">{post[1].short_description.value.en}</textarea> </div>
-                <div class="col"> ES: <br> <textarea class="form-control" rows="8" id="{post[0]}+_en" >{post[1].short_description.value.es}</textarea> </div>
-        </div>
-        <div class="row p-4">
-            <button type="button" class="btn btn-primary" on:click|once={getJson}>Save to JSON</button>
+ <div class="row p-4">
+    <div class="col"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Show JSON</button></div>
     </div>
-        <hr>    
-{/each}
+    {#each $jsonArray as posts}
+       <TableRow post={posts}></TableRow>
+    {/each}
 
 {/if}
 
 
     </div>       
+
+
 
 
 

@@ -84,5 +84,178 @@
       "date": "21/04/2022",
       "source": "pdf manufacturer"
     }
+  },
+  "Ice-plus S110": {
+    "range": {
+      "value": "X-PRIVILO",
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "season": {
+      "value": "Winter",
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "short_description": {
+      "value": {
+        "fr": "L'Ice-plus S110 est un pneu neige pour voiture et utilitaire. Sa production est aujourd'hui arrêtée.",
+        "en": "",
+        "es": ""
+      },
+      "date": "25/05/2022",
+      "source": "https://docs.google.com/spreadsheets/d/1DCeY9EwMBOgPGrZ73i8ZMqioNEjmRH7L/edit#gid=1710573661"
+    },
+    "full_description": {
+      "value": {
+        "fr": ""
+      },
+      "date": "",
+      "source": ""
+    },
+    "main_image": {
+      "value": "https://static.jymeo.com/tires/6958460916819.png",
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "all_images": {
+      "value": [],
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "vehicles": {
+      "value": [
+        "CAR",
+        "VAN"
+      ],
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "sub_categorie": {
+      "value": "économie de carburant",
+      "date": "21/04/2022",
+      "source": "https://docs.google.com/spreadsheets/d/1DCeY9EwMBOgPGrZ73i8ZMqioNEjmRH7L/edit#gid=1710573661"
+    },
+    "categorie": {
+      "value": "Standard",
+      "date": "21/04/2022",
+      "source": "https://docs.google.com/spreadsheets/d/1DCeY9EwMBOgPGrZ73i8ZMqioNEjmRH7L/edit#gid=1710573661"
+    },
+    "strengths": {
+      "value": [
+        {
+          "fr": [
+            "Bonne adhérence dans la neige et sur la glace"
+          ]
+        }
+      ],
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "m+s": {
+      "value": false,
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "3pmsf": {
+      "value": false,
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "documents": {
+      "value": [],
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "starting_production_date": {
+      "value": "",
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    }
+  },
+  "Ice-plus S210": {
+    "range": {
+      "value": "ICE-PLUS",
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "season": {
+      "value": "winter",
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "short_description": {
+      "value": {
+        "fr": "L'Ice-plus S210 est un pneu hiver ayant des performances optimales pour affronter les conditions hivernales.",
+        "en": "",
+        "es": ""
+      },
+      "date": "21/04/2022",
+      "source": "https://docs.google.com/spreadsheets/d/1DCeY9EwMBOgPGrZ73i8ZMqioNEjmRH7L/edit#gid=1710573661"
+    },
+    "full_description": {
+      "value": {
+        "fr": "d"
+      },
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "main_image": {
+      "value": "https://static.jymeo.com/tires/6956647609448.png",
+      "date": "21/04/2022",
+      "source": "quelpneu"
+    },
+    "all_images": {
+      "value": ["dzd"],
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "vehicles": {
+      "value": [
+        "CAR"
+      ],
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "sub_categorie": {
+      "value": "performance",
+      "date": "21/04/2022",
+      "source": "https://docs.google.com/spreadsheets/d/1DCeY9EwMBOgPGrZ73i8ZMqioNEjmRH7L/edit#gid=1710573661"
+    },
+    "categorie": {
+      "value": "HP",
+      "date": "21/04/2022",
+      "source": "https://docs.google.com/spreadsheets/d/1DCeY9EwMBOgPGrZ73i8ZMqioNEjmRH7L/edit#gid=1710573661"
+    },
+    "strengths": {
+      "value": [
+        {
+          "fr": [
+            "Bonne adhérence dans la neige et sur la glace"
+          ]
+        }
+      ],
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "m+s": {
+      "value": true,
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "3pmsf": {
+      "value": false,
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "documents": {
+      "value": ["dfad"],
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    },
+    "starting_production_date": {
+      "value": "",
+      "date": "21/04/2022",
+      "source": "pdf manufacturer"
+    }
   }
 }
