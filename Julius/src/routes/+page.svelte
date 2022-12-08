@@ -15,71 +15,26 @@ let titles = []
        titles.push([r[0]])
     })
     if (toTranslate.length == titles.length){
-        translate(toTranslate)
     } else {
         console.log("Not all the items have a description value FR")
     }
 }   
-
-function translate(toTranslate) {
-		/* let translatedArrayEs = [];
-        let translatedArrayEn = [];
-		async function translateNow(item) {
-			let urlApi =
-				'https://api-free.deepl.com/v2/translate?auth_key=75d45bb4-a842-c6de-9b11-cb903d1eb70a:fx&';
-			let paramsLangToEs = '&source_lang=FR&target_lang=ES';
-            let paramsLangToEn = '&source_lang=FR&target_lang=EN';
-			let urlToEs = urlApi.concat('text=', encodeURIComponent(item), '', paramsLangToEs);
-            let urlToEn = urlApi.concat('text=', encodeURIComponent(item), '', paramsLangToEn);
-			try {
-				const responseEs = await fetch(urlToEs);
-				const dataEs = await responseEs.json();
-				const translationEs = await dataEs.translations[0].text;
-				translatedArrayEs.push(translationEs);
-
-                const responseEn = await fetch(urlToEn);
-				const dataEn = await responseEn.json();
-				const translationEn = await dataEn.translations[0].text;
-				translatedArrayEn.push(translationEn);
-
-				if (translatedArrayEn.length == toTranslate.length) {
-					generateView(translatedArrayEs,translatedArrayEn)
-				}
-			} catch (error) {
-				console.log(error);
-			}
-		}
-		toTranslate.map(translateNow); 
-	}
-
-
-   */
-
-}
-
-
-
 
 </script>
 
 <div class="container">
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
+        <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">JSON file</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              
+            <div class="modal-body">             
                 <textarea class="form-control" rows="40">
                     {JSON.stringify({$jsonArray},null,2)}
                 </textarea>
-
-
-                  
-               
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -92,11 +47,16 @@ function translate(toTranslate) {
 
     <div class="row p-4">
         <div class="col"><h1>Hello Julius</h1></div>
+        <div class="input-group">
+            <span class="input-group-text">API Deepl</span>
+            <input type="text" class="form-control" id="apiKey" value="5166a5ce-5246-e6e4-6893-603327f535d4:fx">
+          </div>
 </div>
+
 {#if $jsonArray == undefined} 
  <div class="row p-4">
         <div class="col"> Paste JSON here <br> 
-            <textarea class="form-control" rows="25" id="jsonText"></textarea>
+            <textarea class="form-control" rows="10" id="jsonText"></textarea>
         </div>
     </div>
         <div class="row p-4">
