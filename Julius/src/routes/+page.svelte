@@ -1,11 +1,20 @@
 <script>
-    import lines from "../lib/models_tracmax_es.json"
-    var array = Object.entries(lines)
+
+    let jsonArray
+ 
+
+
+ function getJson(){   
+    let obj =  document.getElementById("jsonText").value;
+    const lines = JSON.parse(obj);
+    console.log(lines)
+
+    jsonArray = Object.entries(lines)
    
     let toTranslate = []
     let titles = []
 
-    array.forEach(function(r){
+    jsonArray.forEach(function(r){
        toTranslate.push([r[1].short_description.value.fr])
        titles.push([r[0]])
     })
@@ -15,7 +24,7 @@
     } else {
         console.log("Not all the items have a description value FR")
     }
-    
+}   
 
 function translate(toTranslate) {
 		let translatedArrayEs = [];
@@ -52,12 +61,13 @@ function translate(toTranslate) {
     function generateView(translatedArrayEs,translatedArrayEn){
 
         for (let i = 0; i < array.length; i++) {
-           array[i][1].short_description.value.en = translatedArrayEn[i]
-           array[i][1].short_description.value.es = translatedArrayEs[i]
+            jsonArray[i][1].short_description.value.en = translatedArrayEn[i]
+            jsonArray[i][1].short_description.value.es = translatedArrayEs[i]
         }
     
     }
 
+console.log(jsonArray)
 </script>
 
 
@@ -66,22 +76,31 @@ function translate(toTranslate) {
 
 
 <h1>Hello Julius</h1>
-{#each array as post}
 
-<div class="row p-4">
-			<h2>{post[0]}</h2>
-        
-         <div class="col"> FR: <br><textarea class="form-control" rows="8">{post[1].short_description.value.fr}>  </textarea> </div>
-            <div class="col"> EN: <br> <textarea class="form-control" rows="8">{post[1].short_description.value.en}</textarea> </div>
-                <div class="col"> ES: <br> <textarea class="form-control" rows="8">{post[1].short_description.value.es}</textarea> </div>
-
+{#if jsonArray == undefined} 
+    <div class="row p-4">
+        <div class="col"> Paste JSON here <br> 
+            <textarea class="form-control" rows="25" id="jsonText"></textarea>
         </div>
-        <hr>
+    </div>
+        <div class="row p-4">
+        <button type="button" class="btn btn-primary" on:click|once={getJson} >Load JSON</button>
+</div>
+ {:else}
+ {#each jsonArray as post}
+<div class="row p-4">
+			<h2>{post[0]}</h2>       
+         <div class="col"> FR: <br><textarea class="form-control" rows="8">{post[1].short_description.value.fr}>  </textarea> </div>
+            <div class="col"> EN: <br> <textarea class="form-control" rows="8" id="{post[0]}+_en">{post[1].short_description.value.en}</textarea> </div>
+                <div class="col"> ES: <br> <textarea class="form-control" rows="8" id="{post[0]}+_en" >{post[1].short_description.value.es}</textarea> </div>
+        </div>
+        <div class="row p-4">
+            <button type="button" class="btn btn-primary" on:click|once={getJson}>Save to JSON</button>
+    </div>
+        <hr>    
+{/each}
 
-        
-            
-            
-		{/each}
+{/if}
 
 
     </div>       
