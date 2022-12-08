@@ -87,9 +87,3 @@ function hide(e){
 </div>  
 
 
-<style>
-
-    .hide {
-        display: none;
-    }
-</style>
